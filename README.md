@@ -1,6 +1,4 @@
-# weather_scraper stack
-
-## Assignment for DIA Devops Engineer Technical Task
+# Weather scraper stack
 
 ### The following Microservices are included in this repo
 
