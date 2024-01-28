@@ -96,8 +96,11 @@ After the deployment is complete, one can port-forward to the grafana server(loc
  This will allow one to connect to grafana server locally on your machine by accessing ( http://localhost:8080/)
  I've created a number of dashboards to track the health of the Minikube node and another dashboard to track if the data inside of postgresql is coming in regularly as expected (every 10 minutes).
  The data of grafana is stored on a PVC so even if the pod will restart, the data will not be lost. 
- 
+
+ Minikube node health:
 ![Minikube-health](https://github.com/shpookas/weather_scraper/assets/84668053/8938f0cc-d4f9-4027-9ad9-913e32bb84f0)
+
+Postgres db receiving new updates every 10minutes:
 ![postgres-health](https://github.com/shpookas/weather_scraper/assets/84668053/577e560b-5bc4-4d25-a38a-27a8eb1968db)
 
 
