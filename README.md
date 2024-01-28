@@ -98,7 +98,7 @@ After the deployment is complete, one can port-forward to the grafana server(loc
  The data of grafana is stored on a PVC so even if the pod will restart, the data will not be lost. 
 
 
-### Scaling the Stack
+### Scaling the Weather scraper stack
 * This project has been deployed to Minikube kubernetes cluster with only one node running all of the microservices. 
 For more robust solution one would do good to increase the number of nodes in the kubernetes cluster or migrate to a cloud provider that offers Kubernetes services, such as Google Kubernetes Engine (GKE) on Google Cloud Platform, Amazon Elastic Kubernetes Service (EKS) on AWS, and Azure Kubernetes Service (AKS) on Microsoft Azure.
 * If choosing to continue the work on Minikube on might consider to use Kubernetes Horizontal Pod Autoscaler (HPA) to automatically scale the number of pods based on CPU or custom metrics.
