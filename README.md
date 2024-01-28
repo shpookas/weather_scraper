@@ -22,6 +22,22 @@ Grafana and Prometheus (https://github.com/prometheus-operator/kube-prometheus).
 All of the applications have been containerized and deployed to Minikube kubernetes cluster.
 
 
+### Deployment process
+
+First off, make sure that minikube cluster is running:
+```
+Minikube start
+Minikube status
+```
+
+Then start by depoying the application in the following manner;
+
+1. Deploy Zookeeper
+  ```
+  kubectl apply -f zookeeper-service.yaml  
+  kubectl apply 
+  ```
+
 
 
 
