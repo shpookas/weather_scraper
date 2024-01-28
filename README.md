@@ -82,18 +82,18 @@ Then start by depoying the application in the following manner;
   ```
 8. Deploy the Prometheus and Grafana stack for monitoring.
    This was done with the help of helm repos
-   ```
-   helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
-   helm repo update
-   helm install stable prometheus-community/kube-prometheus-stack
-   ```
-   After the deployment is complete, one can port-forward to the grafana server(local port 3000 to grafana port 3000) and then create a SSH tunnel from local machine to the Hetzner server(local port 8080, remote port 3000)
-   ```
-   kubectl port-forward <grafana-pod-name> 3000:3000
-   ssh -L 8080:localhost:3000 evaluator@159.69.1.218
-   ```
-   This will allow one to connect to grafana server locally on your machine on the host by accessing ( http://localhost:8080/)
-   I've created a number of dashboards to track the health of the Minikube node and another dashboard to track if the data inside of postgresql is coming in regularly as expected (every 10 minutes).
-   The data of grafana is stored on a PVC so even if the pod will restart, the data will not be lost. 
+ ```
+ helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+ helm repo update
+ helm install stable prometheus-community/kube-prometheus-stack
+ ```
+After the deployment is complete, one can port-forward to the grafana server(local port 3000 to grafana port 3000) and then create a SSH tunnel from local machine to the Hetzner server(local port 8080, remote port 3000)
+ ```
+ kubectl port-forward <grafana-pod-name> 3000:3000
+ ssh -L 8080:localhost:3000 evaluator@159.69.1.218
+ ```
+ This will allow one to connect to grafana server locally on your machine on the host by accessing ( http://localhost:8080/)
+ I've created a number of dashboards to track the health of the Minikube node and another dashboard to track if the data inside of postgresql is coming in regularly as expected (every 10 minutes).
+ The data of grafana is stored on a PVC so even if the pod will restart, the data will not be lost. 
    
    
