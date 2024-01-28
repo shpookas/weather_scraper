@@ -2,8 +2,6 @@
 
 ## Assignment for DIA Devops Engineer Technical Task
 
-### This repo consists of several microservices that are deployed to a Minikube cluster. 
-
 ### The following Microservices are included in this repo
 
 Scrapper application developed in Python,  
