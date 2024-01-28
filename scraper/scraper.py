@@ -38,8 +38,8 @@ def fetch_and_produce():
         except Exception as e:
             print(f"Error fetching temperature data for {city}: {e}")
 
-# Schedule the job to run every hour
-schedule.every().minute.do(fetch_and_produce)
+# Schedule the job to run every 10 minutes
+schedule.every(10).minutes.do(fetch_and_produce)
 
 while True:
     # Run pending scheduled jobs

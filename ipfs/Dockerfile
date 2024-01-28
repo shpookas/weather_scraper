@@ -12,6 +12,9 @@ RUN rm -rf go-ipfs && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
+# Set the working directory in the container
+WORKDIR /usr/local/bin/
+
 # Copy the bash script into the image
 COPY scraper-bash-ipfs.sh /usr/local/bin/
 
