@@ -21,7 +21,7 @@ There is monitoring stack deployed in order to track the health of the cluster a
 * Grafana and Prometheus (https://github.com/prometheus-operator/kube-prometheus).
 
 
-All of the applications have been containerized and deployed to Minikube kubernetes cluster.
+All of the applications have been containerized and [saved to my personal docker hub repo](https://hub.docker.com/repositories/shpookas).
 
 
 ### Deployment process
@@ -57,7 +57,6 @@ Then start by depoying the application in the following manner;
   kubectl apply -f scraper.yml  
   ```
   The scraper python application is scraping weather information from 5 different cities using wittr (https://github.com/chubin/wttr.in), it is scheduled to scrape this information every 10 minutes and send this information as json to kafka server   with the topic of temperature.
-  The app is dockerized and pushed to my own docker hub repo (https://hub.docker.com/repository/docker/shpookas/scraper/general) 
   After the execution of the command the application will be deployed as kubernetes deployment. 
 
 5. Deploy Kafka Consumer (located under consumer folder)
@@ -66,7 +65,6 @@ Then start by depoying the application in the following manner;
   ```
   Kafka Consumer application will connect to the kafka server to take the data that the scraper produced in json format. Then it will connect to the PostgresQL database to create a new table (if it not exist) and insert all the data that is         coming   in from the scraper. 
   After the execution of the command the application will be deployed as kubernetes deployment. 
-  The app is dockerized and pushed to my own docker hub repo (https://hub.docker.com/repository/docker/shpookas/consumer/general) 
 
 6. Deploy IPFS server (located under ipfs folder)
   ```
