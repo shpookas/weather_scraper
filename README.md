@@ -32,20 +32,36 @@ Minikube status
 
 Then start by depoying the application in the following manner;
 
-1. Deploy Zookeeper
+1. Deploy Zookeeper (located under kafka-zookeeper folder)
   ```
   kubectl apply -f zookeeper-deployment.yaml 
   ```
-  This will deploy zookeeper service and deployment. 
+  This will deploy zookeeper kubernetes service and deployment. 
 
-2. Deploy Kafka
+2. Deploy Kafka(located under kafka-zookeeper folder) 
   ```
   kubectl apply -f kafka-deployment.yaml    
   ```
-  This will deploy kafka service, pvc, and deployment. 
+  This will deploy kafka kubernetes service, pvc, and deployment. 
 
-3. 
-   
+3. Deploy PostgresQL application
+  ```
+  kubectl apply -f kafka-deployment.yaml    
+  ```
+
+3. Deploy Scraper (located under scraper folder)
+  ```
+  kubectl apply -f scraper.yml  
+  ```
+  The scraper python application is scraping weather information from 5 different cities using wittr (https://github.com/chubin/wttr.in), it is scheduled to scrape this information every 10 minutes and send this information as json to kafka server   with the topic of temperature.
+  The app is dockerized and push to my own docker hub repo(docker.io/shpookas/scraper:4) 
+  After the execution of the command the application will be deployed as kubernetes deployment. 
+
+4. Deploy Kafka Consumer (located under consumer folder)
+  ```
+  kubectl apply -f consumer.yml  
+  ```
+  Kafka Consumer application will connect to the kafka server to take the data that the scraper produced in json format. Then it will connect tot 
 
 
 
