@@ -34,9 +34,18 @@ Then start by depoying the application in the following manner;
 
 1. Deploy Zookeeper
   ```
-  kubectl apply -f zookeeper-service.yaml  
-  kubectl apply 
+  kubectl apply -f zookeeper-deployment.yaml 
   ```
+  This will deploy zookeeper service and deployment. 
+
+2. Deploy Kafka
+  ```
+  kubectl apply -f kafka-deployment.yaml    
+  ```
+  This will deploy kafka service, pvc, and deployment. 
+
+3. 
+   
 
 
 
