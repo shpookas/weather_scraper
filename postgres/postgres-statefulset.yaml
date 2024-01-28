@@ -41,10 +41,6 @@ spec:
         volumeMounts:
         - name: postgres-storage
           mountPath: /var/lib/postgresql/data
-      initContainers:
-      - name: init-script
-        image: postgres:latest
-        command: ['bash', '-c', "sleep 10" , "echo", "CREATE TABLE temperature_table (id SERIAL PRIMARY KEY, city VARCHAR(255) NOT NULL, temperature FLOAT NOT NULL, timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP);", " > /docker-entrypoint-initdb.d/init.sql"] 
       volumes:
       - name: postgres-storage
         emptyDir: {}
