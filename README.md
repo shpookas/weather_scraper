@@ -6,7 +6,7 @@ There is monitoring stack deployed in order to track the health of the cluster a
 
 ### The following Microservices are included in this repo
 
-* Scrapper application developed in Python,  
+* Scraper application developed in Python,  
 
 * Kafka consumer application developed in Python 
 
