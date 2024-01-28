@@ -32,7 +32,7 @@ Minikube start
 Minikube status
 ```
 
-Then start by depoying the application in the following manner;
+Then start by depoying the application in the following manner (all of the deployments have been done to the default namespace);
 
 1. Deploy Zookeeper (located under kafka-zookeeper folder)
   ```
