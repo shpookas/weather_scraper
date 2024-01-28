@@ -7,9 +7,13 @@
 ### The following Microservices are included in this repo
 
 Scrapper application developed in Python - deployed as deployment
+
 Kafka consumer application developed in Python - deployed as deployment
+
 Apache Kafka, [taken from Bitnami Docker hub repo](https://hub.docker.com/r/bitnami/kafka/tags).
+
 Zookeeper,  [taken from Bitnami Docker hub repo](https://hub.docker.com/r/bitnami/zookeeper/tags).
+
 
 
 ``` test ``` 
