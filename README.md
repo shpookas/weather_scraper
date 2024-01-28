@@ -98,7 +98,7 @@ After the deployment is complete, one can port-forward to the grafana server(loc
  The data of grafana is stored on a PVC so even if the pod will restart, the data will not be lost. 
 
 ### Updates to the stack
-ALl the written applications have been dockerized, so if one would like to implement new features, one would do good to test the new application code locally, and once satisfied build new docker images, pushing these images to docker hub and deploying the upgraded application to kubernetes via kubernetes .yaml files. 
+All of the applications in this repo have been dockerized, so if one would like to implement new features, one would do good to test the new application code locally, and once satisfied, build new docker images, pushing these images to docker hub and deploying the upgraded application to kubernetes with the use of .yaml files. 
 
 
 ### Scaling the Weather scraper stack
