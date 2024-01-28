@@ -97,6 +97,9 @@ After the deployment is complete, one can port-forward to the grafana server(loc
  I've created a number of dashboards to track the health of the Minikube node and another dashboard to track if the data inside of postgresql is coming in regularly as expected (every 10 minutes).
  The data of grafana is stored on a PVC so even if the pod will restart, the data will not be lost. 
 
+### Updates to the stack
+ALl the written applications have been dockerized, so if one would like to implement new features, one would do good to test the new application code locally, and once satisfied build new docker images, pushing these images to docker hub and deploying the upgraded application to kubernetes via kubernetes .yaml files. 
+
 
 ### Scaling the Weather scraper stack
 * This project has been deployed to Minikube kubernetes cluster with only one node running all of the microservices. 
