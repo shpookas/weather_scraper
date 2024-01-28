@@ -6,11 +6,11 @@ There is monitoring stack deployed in order to track the health of the cluster a
 
 ### The following Microservices are included in this repo
 
-* Scraper application developed in Python,  
+* Scraper application developed in Python.  
 
-* Kafka consumer application developed in Python 
+* Kafka consumer application developed in Python.
 
-* IPFS-client scraper developed in Bash
+* IPFS-client scraper developed in Bash.
 
 * Apache Kafka, [taken from Bitnami Docker hub repo](https://hub.docker.com/r/bitnami/kafka/tags).
 
