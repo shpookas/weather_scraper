@@ -3,7 +3,7 @@
 ### The following Microservices are included in this repo
 
 This application scrapes weather information every 10 minutes from 5 different cities, namely Zurich, London, Miami and Tokyo. This scraping is done by utilizing the [free API called wttr](https://github.com/chubin/wttr.in). 
-The temperature together with the city and timestamp is stored in a PostgreSQL database and occasionally (when the user prompts) to the decentralized database of IPFS. 
+The temperature together with the city and timestamp is stored in a PostgreSQL database and occasionally (when the user prompts) stored to the decentralized database of IPFS. 
 There is monitoring stack deployed in order to track the health of the cluster and whether the data is coming in to postgres database periodically. 
 
 * Scrapper application developed in Python,  
