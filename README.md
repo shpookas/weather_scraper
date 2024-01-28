@@ -103,5 +103,8 @@ After the deployment is complete, one can port-forward to the grafana server(loc
 For more robust solution one would do good to increase the number of nodes in the kubernetes cluster or migrate to a cloud provider that offers Kubernetes services, such as Google Kubernetes Engine (GKE) on Google Cloud Platform, Amazon Elastic Kubernetes Service (EKS) on AWS, and Azure Kubernetes Service (AKS) on Microsoft Azure.
 * If choosing to continue the work on Minikube on might consider to use Kubernetes Horizontal Pod Autoscaler (HPA) to automatically scale the number of pods based on CPU or custom metrics.
 * If the application starts requiring more resources than a single pod can provide, you might need to vertically scale your pods by adjusting the CPU and memory limits in your pod's YAML definition and increasing the number of replicas each deployment and stateful set has. 
-* Make use of Prometheus and Grafana to see if the stack requires more CPU, memory or Nodes. 
+* Make use of Prometheus and Grafana to see if the stack requires more CPU, memory or Nodes.
+
+### Troubleshooting
+Sometimes Kafka server might end up in CrashLoopBackOff Error due to cache memory problems or clusterID missmatch see (https://stackoverflow.com/questions/59592518/kafka-broker-doesnt-find-cluster-id-and-creates-new-one-after-docker-restart/59832914#59832914). If this happens then both Consumer and Scraper applications will stop working too. Thus to fix this delete the deployment and the pvc of kafka server, and redeploy the whole kafka deployment with new storage. 
    
