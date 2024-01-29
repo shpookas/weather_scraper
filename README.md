@@ -79,10 +79,8 @@ Then start by depoying the application in the following manner (all of the deplo
   kubectl apply -f scraper-deployment.yml
   ```
   The client is deployed as a kubernetes deployment. If the user wants to trigger the script, the user has to execute inside into this container and navigate to /usr/local/bin/ where the  ``` scraper-bash-ipfs.sh ``` script is located. After this    is done the script will scrape the weather from 5 different cities and send all data to IPFS server, the output will provide a unique CID for the location of the files. 
-  ```
-  root@ipfs-client-6686477d6c-nhn5w:/usr/local/bin# ./scraper-bash-ipfs.sh 
-  Added weather data for all cities to IPFS with CID: QmRx8sfRi1W2uamaxgiUMnvLpvA9zXfSJwkd8aDWYq2WRP
-  ```
+  ![ipfs-client](https://github.com/shpookas/weather_scraper/assets/84668053/763ce400-1f13-405d-9efd-18341dd28aa0)
+
 8. Deploy the Prometheus and Grafana stack for monitoring.
    This was done with the help of helm repos
  ```
