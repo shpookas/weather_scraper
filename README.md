@@ -128,7 +128,7 @@ For more robust solution one would do good to increase the number of nodes in th
 ### Troubleshooting
 Sometimes Kafka server might end up in CrashLoopBackOff Error due to cache memory problems or clusterID missmatch see (https://stackoverflow.com/questions/59592518/kafka-broker-doesnt-find-cluster-id-and-creates-new-one-after-docker-restart/59832914#59832914). If this happens then both Consumer and Scraper applications will stop working too. Thus to fix this delete the deployment and the pvc of kafka server, and redeploy the whole kafka deployment with new storage. 
 
-Unfortunately the IPFS client bash script has a hardcoded IP address value of IPFS server (it cannot resolve to the internal kubernetes service name for some reason), thus if the IPFS has been redeployed with new service IP address, this has to be changed manually inside of /usr/local/bin/scraper-bash-ipfs.sh, see the screenshot below;
+Unfortunately the IPFS client bash script has a hardcoded IP address value of IPFS server (it cannot resolve to the internal kubernetes service name for some reason), thus if the IPFS has been redeployed with new service IP address, this has to be changed manually inside of /usr/local/bin/scraper-bash-ipfs.sh under "REMOTE_IPFS_ADDRESS", see the screenshot below;
 ![image](https://github.com/shpookas/weather_scraper/assets/84668053/555374ab-8ee1-414e-acee-926398e449f8)
 
 
