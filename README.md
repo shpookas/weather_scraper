@@ -20,8 +20,10 @@ There is monitoring stack deployed in order to track the health of the cluster a
 
 * Grafana and Prometheus (https://github.com/prometheus-operator/kube-prometheus).
 
-
 All of the applications have been containerized and [saved to my personal docker hub repo](https://hub.docker.com/repositories/shpookas).
+
+
+![Minikube_cluster](https://github.com/shpookas/weather_scraper/assets/84668053/6350cf64-cb44-4fc1-83cb-eba8373ac08b)
 
 
 ### Deployment process
