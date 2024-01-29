@@ -47,7 +47,7 @@ Clone this repository and start by depoying the application in the following man
   ```
   This will deploy kafka kubernetes service, pvc, and deployment. In case the pod of kafka has to restart, the data will not be lost as it is stored in the pvc. 
 
-3. Deploy PostgresQL application
+3. Deploy PostgreSQL application
   ```
   kubectl apply -f postgres-statefulset.yaml    
   ```
@@ -64,9 +64,9 @@ Clone this repository and start by depoying the application in the following man
   ```
   kubectl apply -f consumer.yml  
   ```
-  Kafka Consumer application will connect to the kafka server to take the data that the scraper produced in json format. Then it will connect to the PostgresQL database to create a new table (if it not exist) and insert all the data that is         coming   in from the scraper. 
+  Kafka Consumer application will connect to the kafka server to take the data that the scraper produced in json format. Then it will connect to the PostgreSQL database to create a new table (if it not exist) and insert all the data that is         coming   in from the scraper. 
   After the execution of the command the application will be deployed as kubernetes deployment. 
-  Now you can test if the data that is being scraped is being stored in the PostgresQL database by executing inside the postgres container and checking if the temperature_data table is being created and updated with new information
+  Now you can test if the data that is being scraped is being stored in the PostgreSQL database by executing inside the postgres container and checking if the temperature_data table is being created and updated with new information
   Inside the postgres container issue the following commands;
   ```
   psql -U temperature_user -d temperature_database
@@ -105,7 +105,7 @@ After the deployment is complete, one can port-forward to the grafana server(loc
  This will allow one to connect to grafana server locally on your machine by accessing ( http://localhost:8080/)
  Then one will have to add the Postgres, Kafka and Prometheus data sources to be able to scrape metrics of these services. 
  
- I've created a number of dashboards to track the health of the Minikube node and another dashboard to track if the data inside of postgresql is coming in regularly as expected (every 10 minutes).
+ I've created a number of dashboards to track the health of the Minikube node and another dashboard to track if the data inside of PostgreSQL is coming in regularly as expected (every 10 minutes).
  The data of grafana is stored on a PVC so even if the pod will restart, the data will not be lost. 
 
  Minikube node health:
