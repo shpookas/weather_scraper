@@ -22,8 +22,8 @@ There is monitoring stack deployed in order to track the health of the cluster a
 
 All of the applications have been containerized and [saved to my personal docker hub repo](https://hub.docker.com/repositories/shpookas).
 
+![minikube-cluster](https://github.com/shpookas/weather_scraper/assets/84668053/af550eb4-6827-4ca6-b708-6cc1ccd0ff8d)
 
-![Minikube_cluster](https://github.com/shpookas/weather_scraper/assets/84668053/6350cf64-cb44-4fc1-83cb-eba8373ac08b)
 
 
 ### Deployment process
