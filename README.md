@@ -66,6 +66,16 @@ Clone this repository and start by depoying the application in the following man
   ```
   Kafka Consumer application will connect to the kafka server to take the data that the scraper produced in json format. Then it will connect to the PostgresQL database to create a new table (if it not exist) and insert all the data that is         coming   in from the scraper. 
   After the execution of the command the application will be deployed as kubernetes deployment. 
+  Now you can test if the data that is being scraped is being stored in the PostgresQL database by executing inside the postgres container and checking if the temperature_data table is being created and updated with new information
+  Inside the postgres container issue the following commands;
+  ```
+  psql -U temperature_user -d temperature_database
+  \dt
+  SELECT * FROM temperature_data;
+  ```
+  You should get the following results;
+  ![image](https://github.com/shpookas/weather_scraper/assets/84668053/0de26736-d0dc-48b5-b3d4-0e12b93464e6)
+
 
 6. Deploy IPFS server (located under ipfs folder)
   ```
