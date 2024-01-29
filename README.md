@@ -49,7 +49,7 @@ Clone this repository and start by depoying the application in the following man
 
 3. Deploy PostgresQL application
   ```
-  kubectl apply -f kafka-deployment.yaml    
+  kubectl apply -f postgres-statefulset.yaml    
   ```
   This will deploy the PostgreQL kubernetes service, pvc and statefulset. In case the pod of postgres has to restart, the data will not be lost as it is stored in the pvc. 
 
