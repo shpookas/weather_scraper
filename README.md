@@ -33,8 +33,7 @@ First off, make sure that minikube cluster is running:
 Minikube start
 Minikube status
 ```
-
-Then start by depoying the application in the following manner (all of the deployments have been done to the default namespace);
+Clone this repository and start by depoying the application in the following manner (all of the deployments have been done to the default namespace in minikube cluster);
 
 1. Deploy Zookeeper (located under kafka-zookeeper folder)
   ```
