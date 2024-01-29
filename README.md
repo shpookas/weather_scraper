@@ -57,7 +57,8 @@ Clone this repository and start by depoying the application in the following man
   ```
   kubectl apply -f scraper.yml  
   ```
-  The scraper python application is scraping weather information from 5 different cities using wittr (https://github.com/chubin/wttr.in), it is scheduled to scrape this information every 10 minutes and send this information as json to kafka server   with the topic of temperature.
+  The scraper python application is scraping weather information from 5 different cities using wittr (https://github.com/chubin/wttr.in), it is scheduled to scrape this information every 10 minutes and send this information in json format to 
+  kafka server   with the topic of temperature.
   After the execution of the command the application will be deployed as kubernetes deployment. 
 
 5. Deploy Kafka Consumer (located under consumer folder)
