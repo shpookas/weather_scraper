@@ -103,6 +103,8 @@ After the deployment is complete, one can port-forward to the grafana server(loc
  ssh -L 8080:localhost:3000 evaluator@159.69.1.218
  ```
  This will allow one to connect to grafana server locally on your machine by accessing ( http://localhost:8080/)
+ Then one will have to add the Postgres, Kafka and Prometheus data sources to be able to scrape metrics of these services. 
+ 
  I've created a number of dashboards to track the health of the Minikube node and another dashboard to track if the data inside of postgresql is coming in regularly as expected (every 10 minutes).
  The data of grafana is stored on a PVC so even if the pod will restart, the data will not be lost. 
 
