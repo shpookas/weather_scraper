@@ -124,7 +124,7 @@ All of the applications in this repo have been dockerized, so if one would like 
 ### Scaling the Weather scraper stack
 * This project has been deployed to Minikube kubernetes cluster with only one node running all of the microservices. 
 For more robust solution one would do good to increase the number of nodes in the minikube cluster or migrate to a cloud provider that offers Kubernetes services, such as Google Kubernetes Engine (GKE) on Google Cloud Platform, Amazon Elastic Kubernetes Service (EKS) on AWS, and Azure Kubernetes Service (AKS) on Microsoft Azure.
-* If choosing to continue the work on Minikube on might consider to use Kubernetes Horizontal Pod Autoscaler (HPA) to automatically scale the number of pods based on CPU or custom metrics.
+* If choosing to continue the work on Minikube one might consider to use Kubernetes Horizontal Pod Autoscaler (HPA) to automatically scale the number of pods based on CPU or custom metrics.
 * If the application starts requiring more resources than a single pod can provide, you might need to vertically scale your pods by adjusting the CPU and memory limits in your pod's YAML definition and increasing the number of replicas each deployment and stateful set has. 
 * Make use of Prometheus and Grafana to see if the stack requires more CPU, memory or Nodes.
 
