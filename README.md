@@ -128,8 +128,9 @@ Postgres db receiving new updates every 10minutes:
 
 
 
-### Updates to the stack
-All of the applications in this repo have been dockerized, so if one would like to implement new features, one would do good to test the new application code locally, and once satisfied, build new docker images, pushing these images to docker hub and deploying the upgraded application to kubernetes with the use of .yaml files. 
+### Updates and rollbacks
+All of the applications in this repo have been dockerized, so if one would like to implement new features, one would do good to test the new application code locally, and once satisfied, build new docker images, tag them with a version and push these images to dockerhub. Use the newly created docker image tag in the deployment specification of the kubernetes .yaml files. 
+If for some reason a new feature proves to be faulty, then rollback to a previous version using a previous version docker tag in the kubernetes .yaml files. 
 
 
 ### Scaling the Weather scraper stack
