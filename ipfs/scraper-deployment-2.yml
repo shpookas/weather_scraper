@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ipfs-client-2
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ipfs-client-2
+  template:
+    metadata:
+      labels:
+        app: ipfs-client-2
+    spec:
+      containers:
+      - name: ipfs-client
+        image: docker.io/shpookas/ipfs-client:14 # Replace this with the name of your Docker image
+        command: ["/bin/sh", "-c", "ipfs init &&  ./scraper-bash-ipfs-2.sh"]
