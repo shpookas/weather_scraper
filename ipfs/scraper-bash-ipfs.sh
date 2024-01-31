@@ -4,7 +4,7 @@
 cities=("Zurich" "London" "Miami" "Tokyo" "Singapore")
 
 # IPFS daemon address
-REMOTE_IPFS_ADDRESS="/ip4/10.244.0.99/tcp/5001"
+REMOTE_IPFS_ADDRESS="/ip4/10.244.0.21/tcp/5001"
 
 # Variable to hold all weather data
 all_weather_data="["
