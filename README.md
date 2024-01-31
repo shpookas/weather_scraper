@@ -86,13 +86,16 @@ Clone this repository and start by depoying the application in the following man
   ```
   kubectl apply -f ipfs.yml  
   ```
-  This will deploy IPFS Service and Statefulset and initialize the ipfs daemon to run. In case the pod of ipfs has to restart, the data will not be lost as it is stored in the pvc.
+  This will deploy IPFS (InterPlanetary File System)  Service and Statefulset and initialize the ipfs daemon to run. In case the pod of ipfs has to restart, the data will not be lost as it is stored in the pvc.
 
 7. Deploy the IPFS client (located under ipfs folder) and IPFS-client service
   ```
   kubectl apply -f scraper-deployment-2.yml
   kubectl apply -f ipfs-client-service.yml
   ```
+  
+  This script is a bash script that scrapes weather data for a list of cities from the wttr.in service, formats it into JSON, and serves it via a simple HTTP server. Additionally, it adds the JSON data to the (IPFS)   
+  using the IPFS daemon running on a specified address.
   The client is deployed as a kubernetes deployment. If the user wants to trigger the script, the user has to issue the following command to get the IP address of ipfs-client-service
 
   ```
