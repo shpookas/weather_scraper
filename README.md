@@ -58,14 +58,16 @@ Clone this repository and start by depoying the application in the following man
   kubectl apply -f scraper.yml  
   ```
   The scraper python application is scraping weather information from 5 different cities using wittr (https://github.com/chubin/wttr.in), it is scheduled to scrape this information every 10 minutes and send this information in json format to 
-  kafka server   with the topic of temperature.
+  kafka server with the topic of temperature, this enables real-time monitoring of the temperature for these 5 different cities. 
+ 
   After the execution of the command the application will be deployed as kubernetes deployment. 
 
 5. Deploy Kafka Consumer (located under consumer folder)
   ```
   kubectl apply -f consumer.yml  
   ```
-  Kafka Consumer application will connect to the kafka server to take the data that the scraper produced in json format. Then it will connect to the PostgreSQL database to create a new table (if it not exist) and insert all the data that is         coming   in from the scraper. 
+  In summary, this script continuously consumes messages from the 'temperature' Kafka topic, parses the JSON data from these messages, and stores them into a PostgreSQL database, enabling the persistence of temperature data for various cities     
+  over time.
   After the execution of the command the application will be deployed as kubernetes deployment. 
   Now you can test if the data that is being scraped is being stored in the PostgreSQL database by executing inside the postgres container and checking if the temperature_data table is being created and updated with new information
   Inside the postgres container issue the following commands;
