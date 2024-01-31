@@ -86,14 +86,20 @@ Clone this repository and start by depoying the application in the following man
   ```
   This will deploy IPFS Service and Statefulset and initialize the ipfs daemon to run. In case the pod of ipfs has to restart, the data will not be lost as it is stored in the pvc.
 
-7. Deploy the IPFS client (located under ipfs folder)
+7. Deploy the IPFS client (located under ipfs folder) and IPFS-client service
   ```
-  kubectl apply -f scraper-deployment.yml
+  kubectl apply -f scraper-deployment-2.yml
+  kubectl apply -f ipfs-client-service.yml
   ```
-  The client is deployed as a kubernetes deployment. If the user wants to trigger the script, the user has to execute inside into this container and navigate to /usr/local/bin/ where the  ``` scraper-bash-ipfs.sh ``` script is located. After this    is done the script will scrape the weather from 5 different cities and send all data to IPFS server, the output will provide a unique CID for the location of the files. 
-  ![ipfs-client](https://github.com/shpookas/weather_scraper/assets/84668053/763ce400-1f13-405d-9efd-18341dd28aa0)
+  The client is deployed as a kubernetes deployment. If the user wants to trigger the script, the user has to issue the following command to get the IP address of ipfs-client-service
 
-  * The IPFS client bash script has a hardcoded IP address value of IPFS server (it cannot resolve to the internal kubernetes service name for some reason), thus if the IPFS has been redeployed with new service IP address, this has to be changed     manually inside of /usr/local/bin/scraper-bash-ipfs.sh under "REMOTE_IPFS_ADDRESS" to the IP adress of IPFS server service, see the screenshot below;
+  ```
+  minikube service ipfs-client-service --url
+  ```
+  You will then be able to curl to the application which will trigger the script to run and add data to IPFS CID. See the image bellow;
+  ![ipfs-client-service](https://github.com/shpookas/weather_scraper/assets/84668053/38774c0f-750e-4e5f-a927-6c13a854d4ad)
+
+  * The IPFS client bash script has a hardcoded IP address value of IPFS server (it cannot resolve to the internal kubernetes service name for some reason), thus if the IPFS has been redeployed with new service IP address, this has to be changed     manually inside of /usr/local/bin/scraper-bash-ipfs-2.sh under "REMOTE_IPFS_ADDRESS" to the IP adress of IPFS server service, see the screenshot below;
   ![image](https://github.com/shpookas/weather_scraper/assets/84668053/555374ab-8ee1-414e-acee-926398e449f8)
 
 8. Deploy the Prometheus and Grafana stack for monitoring.
