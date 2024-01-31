@@ -14,5 +14,5 @@ spec:
     spec:
       containers:
       - name: ipfs-client
-        image: docker.io/shpookas/ipfs-client:14 # Replace this with the name of your Docker image
+        image: docker.io/shpookas/ipfs-client:15 # Replace this with the name of your Docker image
         command: ["/bin/sh", "-c", "ipfs init &&  ./scraper-bash-ipfs-2.sh"]

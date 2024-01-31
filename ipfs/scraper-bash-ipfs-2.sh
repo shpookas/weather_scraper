@@ -21,7 +21,6 @@ scrape_city_weather() {
 for city in "${cities[@]}"; do
     scrape_city_weather "$city"
 done
-gi
 # Remove the trailing comma from the last entry and close the JSON array
 all_weather_data="${all_weather_data%,}\n]"
 
